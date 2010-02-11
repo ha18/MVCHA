@@ -1,0 +1,12 @@
+<?php
+
+require_once 'errors.inc.php';
+#trigger_error ('hans did this', E_USER_WARNING );
+debug ( 'hans did this: debug' );
+
+function do_test ()
+{
+	trigger_error ('do_test', E_USER_WARNING );
+}
+
+do_test();

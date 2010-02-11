@@ -1,0 +1,18 @@
+<?php
+
+require_once 'plugins.inc.php';
+
+function hook_add_test ( $data )
+{
+	$data['email'] = 'email@hansanderson.com';	
+	return $data;
+}
+
+
+hook_add ( 'view_pre', 'hook_add_test' );
+
+
+$data = array ( 'name' => 'Hans', 'email' => 'me@ha17.com' );
+$data = hook_run ( 'view_pre', $data );
+
+print "<pre>"; print_r( $data ); print "</pre>";
