@@ -1,8 +1,26 @@
 <?php
 
 /**
- * Form helper functions.
+ *  
+ *  Form Helper Functions for MVCHA
+ *  
+ *  @package main
+ *  @since
+ *  @todo
+ *  @author Hans Anderson <me@ha17.com>
+ * 
  */
+
+/**
+*  
+*  Makes it easier to convert the attribute arrays to proper strings, used in the main form_helper
+* 
+* @return string
+* @param array $attr 
+*
+* @author Hans Anderson <handerson@executiveboard.com>
+*
+*/
 
 function attr2str ( $attr )
 {
@@ -21,7 +39,18 @@ function attr2str ( $attr )
 	return implode ( ' ', $a );
 }
 
-
+   /**
+	* A better way to output select options in html
+	* 
+	*
+	* @return string
+	* @param array $options (keyed array)
+	* @param string $selected Which one is selected?
+	* @param bool $no_key_htmlentities Don't use htmlentities on the keys
+	*
+	* @author Hans Anderson <handerson@executiveboard.com>
+	*
+	*/
 function html_options ( $options, $selected, $no_key_htmlentities=FALSE )
 {
 
@@ -50,6 +79,26 @@ function html_options ( $options, $selected, $no_key_htmlentities=FALSE )
 
 }
 
+/**
+	*  *
+	*  A way to create standardized forms without having to type all of the boxes. I use these in *views*
+	*
+	*
+	* Example:
+	* <?php echo form_helper ( 'text', 'TextField1', 'TextField1Value', array ( 'class' => 'classname1 classname2', 'maxlength' => '2' )  ); ?>
+	*
+	*  *
+	*  * @return
+	*  * @param string $type Type of form element (text, checkbox, select, etc)
+	*  * @param string $name Name of form element (goes into id attr, too)
+	*  * @param string $value Default value, if any, of the form element
+	*  * @param array $attributes An array of attributes to be added to the form element, such as class or style
+	*  * @param array $errors Any errors relating to the element, so you can display errors next to the field
+	*  * @since 
+	*  *
+	*  * @author Hans Anderson <handerson@executiveboard.com>
+	*  *
+	*  */
 function form_helper ( $type, $name=null, $value=null, $attributes=null, $errors=null )
 {
 	if ( empty ( $type ) ) 
