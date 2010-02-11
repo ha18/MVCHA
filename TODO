@@ -1,3 +1,6 @@
 TODO
 
 * Create tests for every function
+* remove conflicts with PHP 5.3 (goto)
+* add namespace support
+* bring changes from work SVN repository
