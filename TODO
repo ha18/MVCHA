@@ -4,3 +4,4 @@ TODO
 * remove conflicts with PHP 5.3 (goto)
 * add namespace support
 * bring changes from work SVN repository
+* add readme.md
